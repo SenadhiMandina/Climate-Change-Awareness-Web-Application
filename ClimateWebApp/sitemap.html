@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .sitemap-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .sitemap-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sitemap-section {
+            margin-bottom: 2rem;
+        }
+        
+        .sitemap-section h2 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .sitemap-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .sitemap-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sitemap-list a {
+            color: var(--foreground);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .sitemap-list a:hover {
+            color: var(--primary);
+        }
+        
+        .sitemap-sublist {
+            list-style-type: none;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .sitemap-svg {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            margin: 2rem auto;
+            display: block;
+        }
+        svg circle{
+            fill: white;
+            outline: 1px solid black;
+            border-radius:50%;
+        }
+        svg rect{
+            fill: white;
+            outline: 1px solid black;
+            border-radius:20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link active">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="sitemap-header">
+            <div class="container">
+                <h1>Sitemap</h1>
+                <p>Navigate our website with ease</p>
+            </div>
+        </div>
+
+            <!-- SVG Sitemap -->
+            <svg width="100%" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- Splash Screen -->
+                <a href="splash.html" tabindex="0">
+                    <g class="node splash-node">
+                        <circle cx="500" cy="50" r="40" />
+                        <text x="500" y="55" text-anchor="middle">Splash</text>
+                        <title>Splash Screen</title>
+                    </g>
+                </a>
+                
+                <!-- Line from Splash to Home -->
+                <line x1="500" y1="90" x2="500" y2="150" stroke="#0077b6" stroke-width="2" />
+                
+                <!-- Home Page -->
+                <a href="home.html" tabindex="0">
+                    <g class="node home-node">
+                        <circle cx="500" cy="200" r="40" />
+                        <text x="500" y="205" text-anchor="middle">Home</text>
+                        <title>Home Page</title>
+                    </g>
+                </a>
+                
+                <!-- Lines from Home to other main pages -->
+                <line x1="500" y1="240" x2="200" y2="300" stroke="#0077b6" stroke-width="2" />
+                <line x1="500" y1="240" x2="350" y2="300" stroke="#0077b6" stroke-width="2" />
+                <line x1="500" y1="240" x2="500" y2="300" stroke="#0077b6" stroke-width="2" />
+                <line x1="500" y1="240" x2="650" y2="300" stroke="#0077b6" stroke-width="2" />
+                <line x1="500" y1="240" x2="800" y2="300" stroke="#0077b6" stroke-width="2" />
+                
+                <!-- Volunteer Page -->
+                <a href="volunteer.html" tabindex="0">
+                    <g class="node volunteer-node">
+                        <circle cx="200" cy="350" r="40" />
+                        <text x="200" y="355" text-anchor="middle">Volunteer</text>
+                        <title>Volunteer Page</title>
+                    </g>
+                </a>
+                
+                <!-- Table Page -->
+                <a href="table.html" tabindex="0">
+                    <g class="node table-node">
+                        <circle cx="350" cy="350" r="40" />
+                        <text x="350" y="355" text-anchor="middle">Data</text>
+                        <title>Data Table</title>
+                    </g>
+                </a>
+                
+                <!-- Profile Page -->
+                <a href="feedback.html" tabindex="0">
+                    <g class="node profile-node">
+                        <circle cx="500" cy="350" r="40" />
+                        <text x="500" y="355" text-anchor="middle">Feedback</text>
+                        <title>User Profile</title>
+                    </g>
+                </a>
+                
+                <!-- Feedback Page -->
+                <a href="profile.html" tabindex="0">
+                    <g class="node feedback-node">
+                        <circle cx="650" cy="350" r="40" />
+                        <text x="650" y="355" text-anchor="middle">Profile</text>
+                        <title>Feedback Form</title>
+                    </g>
+                </a>
+                
+                <!-- Team Page -->
+                <a href="team.html" tabindex="0">
+                    <g class="node team-node">
+                        <circle cx="800" cy="350" r="40" />
+                        <text x="800" y="355" text-anchor="middle">Team</text>
+                        <title>Team Members</title>
+                    </g>
+                </a>
+                
+                <!-- Lines from main pages to content pages -->
+                <line x1="200" y1="390" x2="200" y2="450" stroke="#0077b6" stroke-width="2" />
+                <line x1="350" y1="390" x2="350" y2="450" stroke="#0077b6" stroke-width="2" />
+                <line x1="500" y1="390" x2="500" y2="450" stroke="#0077b6" stroke-width="2" />
+                <line x1="650" y1="390" x2="650" y2="450" stroke="#0077b6" stroke-width="2" />
+                
+                <!-- Content Pages -->
+                <a href="content_ST1.html" tabindex="0">
+                    <g class="node content-node">
+                        <rect x="150" y="450" width="100" height="50" rx="10" ry="10" />
+                        <text x="200" y="480" text-anchor="middle">Content 1</text>
+                        <title>Content Page 1</title>
+                    </g>
+                </a>
+                
+                <a href="content_ST2.html" tabindex="0">
+                    <g class="node content-node">
+                        <rect x="300" y="450" width="100" height="50" rx="10" ry="10" />
+                        <text x="350" y="480" text-anchor="middle">Content 2</text>
+                        <title>Content Page 2</title>
+                    </g>
+                </a>
+                
+                <a href="content_ST3.html" tabindex="0">
+                    <g class="node content-node">
+                        <rect x="450" y="450" width="100" height="50" rx="10" ry="10" />
+                        <text x="500" y="480" text-anchor="middle">Content 3</text>
+                        <title>Content Page 3</title>
+                    </g>
+                </a>
+                
+                <a href="content_ST4.html" tabindex="0">
+                    <g class="node content-node">
+                        <rect x="600" y="450" width="100" height="50" rx="10" ry="10" />
+                        <text x="650" y="480" text-anchor="middle">Content 4</text>
+                        <title>Content Page 4</title>
+                    </g>
+                </a>
+                
+                <!-- Editor Pages -->
+                <a href="pageEditor_ST1.html" tabindex="0">
+                    <g class="node editor-node">
+                        <rect x="150" y="530" width="100" height="50" rx="10" ry="10" />
+                        <text x="200" y="560" text-anchor="middle">Editor 1</text>
+                        <title>Page Editor 1</title>
+                    </g>
+                </a>
+                
+                <a href="pageEditor_ST2.html" tabindex="0">
+                    <g class="node editor-node">
+                        <rect x="300" y="530" width="100" height="50" rx="10" ry="10" />
+                        <text x="350" y="560" text-anchor="middle">Editor 2</text>
+                        <title>Page Editor 2</title>
+                    </g>
+                </a>
+                
+                <a href="pageEditor_ST3.html" tabindex="0">
+                    <g class="node editor-node">
+                        <rect x="450" y="530" width="100" height="50" rx="10" ry="10" />
+                        <text x="500" y="560" text-anchor="middle">Editor 3</text>
+                        <title>Page Editor 3</title>
+                    </g>
+                </a>
+                
+                <a href="pageEditor_ST4.html" tabindex="0">
+                    <g class="node editor-node">
+                        <rect x="600" y="530" width="100" height="50" rx="10" ry="10" />
+                        <text x="650" y="560" text-anchor="middle">Editor 4</text>
+                        <title>Page Editor 4</title>
+                    </g>
+                </a>
+                
+                <!-- Lines from content to editor pages -->
+                <line x1="200" y1="500" x2="200" y2="530" stroke="#0077b6" stroke-width="2" />
+                <line x1="350" y1="500" x2="350" y2="530" stroke="#0077b6" stroke-width="2" />
+                <line x1="500" y1="500" x2="500" y2="530" stroke="#0077b6" stroke-width="2" />
+                <line x1="650" y1="500" x2="650" y2="530" stroke="#0077b6" stroke-width="2" />
+            </svg>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

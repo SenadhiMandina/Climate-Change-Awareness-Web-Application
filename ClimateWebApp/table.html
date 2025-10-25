@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Action - Data Table</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        
+        .climate-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .climate-table th,
+        .climate-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .climate-table th {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            position: relative;
+        }
+        
+        .climate-table th img {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        .climate-table th:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary);
+            color: var(--secondary-foreground);
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        
+        .climate-table tr:nth-child(even) {
+            background-color: var(--muted);
+        }
+        
+        .climate-table tr:hover {
+            background-color: rgba(0, 168, 132, 0.1);
+        }
+        
+        .climate-table td.has-icon {
+            text-align: center;
+        }
+        
+        .icon-check {
+            color: green;
+            font-size: 1.25rem;
+        }
+        
+        .icon-cross {
+            color: red;
+            font-size: 1.25rem;
+        }
+        
+        .table-logo {
+            display: block;
+            width: 100px;
+            height: auto;
+            margin: 0 auto 2rem;
+        }
+        
+        .table-caption {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .table-footer {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            text-align: right;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-value {
+            height: 100%;
+            background-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link active">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="container">
+            <h1 class="text-center mb-4">Climate Action Progress by Country</h1>
+            
+            <img src="./assets/logo.png" height=100 width=100 alt="Climate Action Logo" class="table-logo">
+            
+            <p class="table-caption">This table shows the progress of various countries toward meeting their climate action goals.</p>
+            
+            <div class="table-container">
+                <table class="climate-table" aria-label="Climate Action Progress by Country">
+                    <thead>
+                        <tr>
+                            <th title="Country Name">Country</th>
+                            <th title="Emissions Reduction Target by 2030"><img src="./assets/target.png" height=24 width=24 alt="Target Icon"><br> 2030 Target</th>
+                            <th title="Current Progress Toward Target"><img src="./assets/progress.png" height=24 width=24 alt="Progress Icon"><br> Progress</th>
+                            <th title="Renewable Energy Percentage"><img src="./assets/energy.png" height=24 width=24 alt="Energy Icon"><br> Renewable Energy</th>
+                            <th title="Paris Agreement Signatory"><img src="./assets/agreement.png" height=24 width=24 alt="Agreement Icon"><br> Paris Agreement</th>
+                            <th title="Net Zero Commitment"><img src="./assets/zero.png" height=24 width=24 alt="Zero Icon"><br> Net Zero Commitment</th>
+                            <th title="Climate Action Policies"><img src="./assets/policy.png" height=24 width=24 alt="Policy Icon"><br> Policies</th>
+                            <th title="Climate Funding (USD Millions)"><img src="./assets/funding.webp" height=24 width=24 alt="Funding Icon"><br> Funding</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">Sweden</a></td>
+                            <td>65%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 70%;"></div>
+                                </div>
+                                70%
+                            </td>
+                            <td>56%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>15</td>
+                            <td>$580M</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Denmark</a></td>
+                            <td>70%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 65%;"></div>
+                                </div>
+                                65%
+                            </td>
+                            <td>48%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>12</td>
+                            <td>$450M</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">United Kingdom</a></td>
+                            <td>68%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 45%;"></div>
+                                </div>
+                                45%
+                            </td>
+                            <td>42%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>10</td>
+                            <td>$1.2B</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Germany</a></td>
+                            <td>55%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 40%;"></div>
+                                </div>
+                                40%
+                            </td>
+                            <td>46%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>14</td>
+                            <td>$2.5B</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">France</a></td>
+                            <td>40%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 35%;"></div>
+                                </div>
+                                35%
+                            </td>
+                            <td>23%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>9</td>
+                            <td>$1.8B</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">United States</a></td>
+                            <td>50%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 20%;"></div>
+                                </div>
+                                20%
+                            </td>
+                            <td>19%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>8</td>
+                            <td>$3.1B</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Japan</a></td>
+                            <td>46%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 25%;"></div>
+                                </div>
+                                25%
+                            </td>
+                            <td>21%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>7</td>
+                            <td>$1.5B</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Australia</a></td>
+                            <td>43%</td>
+                            <td>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 15%;"></div>
+                                </div>
+                                15%
+                            </td>
+                            <td>24%</td>
+                            <td class="has-icon">✓</td>
+                            <td class="has-icon">✓</td>
+                            <td>6</td>
+                            <td>$420M</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Global Average</strong></td>
+                            <td colspan="2">
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 30%;"></div>
+                                </div>
+                                30% Progress
+                            </td>
+                            <td class="has-icon" colspan="2">191 Signatories</td>
+                            <td colspan="2">$12.5B Total Funding</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-footer">
+                <p>Data sources: UNFCCC, Climate Action Tracker, IEA Renewable Energy Statistics</p>
+                <p>Last updated: March 2025</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

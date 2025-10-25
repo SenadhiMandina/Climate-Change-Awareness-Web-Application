@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Science Editor | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .editor-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .editor-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .editor-section {
+            margin-bottom: 2rem;
+        }
+        
+        .editor-section h2 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .task-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .task-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .external-link::after {
+            content: " ↗";
+            font-size: 0.8em;
+        }
+        
+        .reference-list {
+            padding-left: 1rem;
+        }
+        
+        .reference-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="editor-header">
+            <div class="container">
+                <h1>Page Editor: Student 1</h1>
+            </div>
+        </div>
+        
+        <div class="container editor-container">
+            <section class="editor-section" id="content-overview">
+                <h2>1. Content Overview</h2>
+                <p><strong>Name:</strong> Senadhi Mandina</p>
+                <p><strong>Role:</strong> Student 1</p>
+                <h3>Completed Tasks/Pages:</h3>
+                <ul class="task-list">
+                    <li>Splash Screen</li>
+                    <li>Volunteer Page</li>
+                    <li>Climate Science Content Page</li>
+                </ul>
+            </section>
+
+            <section class="editor-section" id="technical-description">
+                <h2>2. Technical Description</h2>
+                
+                <h3>Splash Screen</h3>
+                <p>The splash screen utilizes HTML5 semantic elements for structure and CSS flexbox for centering content. Key HTML tags include:</p>
+                <ul>
+                    <li><code>&lt;div class="splash-screen"&gt;</code>: Container for the entire splash screen</li>
+                    <li><code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code>: For main title and subtitle</li>
+                    <li><code>&lt;div class="splash-team"&gt;</code>: To group team member information</li>
+                </ul>
+                <p>CSS techniques include:</p>
+                <ul>
+                    <li><code>background-image</code> with <code>background-size: cover</code> for full-screen background</li>
+                    <li><code>display: flex</code> with <code>flex-direction: column</code> for vertical alignment</li>
+                    <li><code>position: absolute</code> with <code>z-index</code> for overlay effect</li>
+                </ul>
+
+                <h3>Volunteer Page</h3>
+                <p>The volunteer page uses a combination of semantic HTML and CSS Grid for layout. Key elements include:</p>
+                <ul>
+                    <li><code>&lt;section&gt;</code> tags to divide content into logical parts</li>
+                    <li><code>&lt;form&gt;</code> for the feedback section</li>
+                    <li><code>&lt;div class="program-card"&gt;</code> for individual volunteer programs</li>
+                </ul>
+                <p>CSS techniques include:</p>
+                <ul>
+                    <li><code>display: grid</code> for responsive layout of program cards</li>
+                    <li><code>:hover</code> pseudo-class for interactive elements</li>
+                    <li>Custom properties (CSS variables) for consistent theming</li>
+                </ul>
+
+                <h3>Climate Science Content Page</h3>
+                <p>This page emphasizes readability and information hierarchy. Key HTML elements:</p>
+                <ul>
+                    <li><code>&lt;nav class="content-nav"&gt;</code> for in-page navigation</li>
+                    <li><code>&lt;section&gt;</code> tags with unique IDs for each content area</li>
+                    <li><code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> for images and their descriptions</li>
+                </ul>
+                <p>CSS techniques include:</p>
+                <ul>
+                    <li><code>position: sticky</code> for the in-page navigation</li>
+                    <li><code>scroll-margin-top</code> for smooth scrolling to sections</li>
+                    <li>Responsive typography using <code>rem</code> units</li>
+                </ul>
+            </section>
+
+            <section class="editor-section" id="organization">
+                <h2>3. Organization</h2>
+                <p>The content is organized using clear headings and logical sections. The navigation has been customized to include links to specific sections within the page:</p>
+                <ul>
+                    <li><a href="#content-overview">Content Overview</a></li>
+                    <li><a href="#technical-description">Technical Description</a></li>
+                    <li><a href="#organization">Organization</a></li>
+                    <li><a href="#links">Links</a></li>
+                    <li><a href="#challenges">Challenges and Lessons Learned</a></li>
+                    <li><a href="#accessibility">Accessibility</a></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><a href="#references">References</a></li>
+                </ul>
+            </section>
+
+            <section class="editor-section" id="links">
+                <h2>4. Links</h2>
+                <ul class="task-list">
+                    <li><a href="splash.html" target="_blank" class="external-link">Splash Screen</a></li>
+                    <li><a href="volunteer.html" target="_blank" class="external-link">Volunteer Page</a></li>
+                    <li><a href="content_ST1.html" target="_blank" class="external-link">Climate Science Content Page</a></li>
+                    <li><a href="validation_ST1.html" target="_blank" class="external-link">Validation Page</a></li>
+                </ul>
+            </section>
+
+            <section class="editor-section" id="challenges">
+                <h2>5. Challenges and Lessons Learned</h2>
+                <p>During the implementation of these pages, several challenges were encountered:</p>
+                <ul>
+                    <li><strong>Responsive Design:</strong> Ensuring the splash screen looked good on all device sizes was challenging. I learned to use media queries and flexbox to create a responsive layout.</li>
+                    <li><strong>Accessibility:</strong> Making the volunteer form accessible required careful consideration of form labels and ARIA attributes. This improved my understanding of web accessibility principles.</li>
+                    <li><strong>Content Organization:</strong> Structuring the climate science content in a clear and engaging way was difficult. I learned the importance of information architecture and how to use HTML semantics to improve content structure.</li>
+                </ul>
+                <p>These challenges taught me the importance of planning, testing on multiple devices, and considering accessibility from the start of the design process.</p>
+            </section>
+
+            <section class="editor-section" id="accessibility">
+                <h2>6. Accessibility</h2>
+                <p>Accessibility was a key consideration in the development of these pages:</p>
+                <ul>
+                    <li><strong>Semantic HTML:</strong> Used throughout to provide clear structure and meaning to content.</li>
+                    <li><strong>Color Contrast:</strong> Ensured sufficient contrast between text and background colors.</li>
+                    <li><strong>Alternative Text:</strong> Provided for all images, including descriptive captions where necessary.</li>
+                    <li><strong>Keyboard Navigation:</strong> All interactive elements are accessible via keyboard.</li>
+                    <li><strong>ARIA Labels:</strong> Used where necessary to provide additional context for screen readers.</li>
+                    <li><strong>Responsive Design:</strong> Ensures content is accessible on various device sizes and orientations.</li>
+                </ul>
+            </section>
+
+            <section class="editor-section" id="compliance">
+                <h2>7. Compliance</h2>
+                <p>The pages created comply with Janet regulations for web page publication in the following ways:</p>
+                <ul>
+                    <li><strong>Data Protection:</strong> No personal data is collected or stored without explicit consent.</li>
+                    <li><strong>Copyright:</strong> All images and content used are either original, properly licensed, or used with permission.</li>
+                    <li><strong>Accessibility:</strong> Pages are designed to meet WCAG 2.1 Level AA standards.</li>
+                    <li><strong>Security:</strong> No sensitive information is exposed in the HTML or CSS.</li>
+                    <li><strong>Branding:</strong> University branding guidelines have been followed in the design.</li>
+                </ul>
+                <p>While efforts have been made to ensure compliance, further review by the university's web team would be necessary for full verification.</p>
+            </section>
+
+            <section class="editor-section" id="references">
+                <h2>8. References</h2>
+                <ol class="reference-list">
+                    <li id="ref1">W3C. (2018). Web Content Accessibility Guidelines (WCAG) 2.1. <a href="https://www.w3.org/TR/WCAG21/" target="_blank" class="external-link">https://www.w3.org/TR/WCAG21/</a></li>
+                    <li id="ref2">MDN Web Docs. (2023). HTML: HyperText Markup Language. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="external-link">https://developer.mozilla.org/en-US/docs/Web/HTML</a></li>
+                    <li id="ref3">MDN Web Docs. (2023). CSS: Cascading Style Sheets. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="external-link">https://developer.mozilla.org/en-US/docs/Web/CSS</a></li>
+                    <li id="ref4">IPCC. (2021). Climate Change 2021: The Physical Science Basis. <a href="https://www.ipcc.ch/report/ar6/wg1/" target="_blank" class="external-link">https://www.ipcc.ch/report/ar6/wg1/</a></li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

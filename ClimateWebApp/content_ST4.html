@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Action | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .content-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .content-nav {
+            position: sticky;
+            top: var(--header-height);
+            background-color: var(--background);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+            z-index: 10;
+        }
+        
+        .content-nav-list {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow-x: auto;
+        }
+        
+        .content-nav-link {
+            color: var(--foreground);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .content-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .content-nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .content-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: calc(var(--header-height) + 60px);
+        }
+        
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fact-box {
+            background-color: var(--muted);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .fact-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .go-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .go-to-top:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="content-header">
+            <div class="container">
+                <h1>Community Action</h1>
+                <p>Mobilizing communities for effective climate solutions</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Internal navigation -->
+            <nav class="content-nav">
+                <ul class="content-nav-list">
+                    <li><a href="#introduction" class="content-nav-link">Introduction</a></li>
+                    <li><a href="#organizing-events" class="content-nav-link">Organizing Local Events</a></li>
+                    <li><a href="#community-gardens" class="content-nav-link">Community Gardens</a></li>
+                    <li><a href="#energy-initiatives" class="content-nav-link">Neighborhood Energy</a></li>
+                    <li><a href="#education-outreach" class="content-nav-link">Education & Outreach</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section">
+                <h2>Introduction to Community Climate Action</h2>
+                <p>Community climate action involves local groups working together to address climate change through collective efforts. These grassroots initiatives empower people to make meaningful contributions to climate solutions while strengthening community bonds.</p>
+                
+                <img src="./assets/climate-projects.jpg?height=400&width=800" alt="Community members collaborating on climate projects" class="content-image">
+                
+                <p>Community-based approaches to climate action are essential because they can be tailored to local needs, build social resilience, and create models that can be scaled up or replicated elsewhere.</p>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>Research shows that community-based initiatives can reduce household carbon footprints by up to 20% through collective action and behavior change.</p>
+                </div>
+            </section>
+            
+            <!-- Organizing Local Events Section -->
+            <section id="organizing-events" class="content-section">
+                <h2>Organizing Local Events</h2>
+                <p>Organizing local events is a powerful way to raise awareness, build community support, and take direct action on climate issues.</p>
+                
+                <img src="./assets/action-event.avif" height=400 width=800 alt="Community climate action event" class="content-image">
+                
+                <p>Effective community climate events include:</p>
+                <ul>
+                    <li>Climate awareness workshops and educational seminars</li>
+                    <li>Community clean-up days for parks, beaches, and waterways</li>
+                    <li>Tree planting and habitat restoration projects</li>
+                    <li>Climate-friendly skills workshops (e.g., bike repair, gardening)</li>
+                    <li>Climate film screenings and discussion forums</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>Community events that combine education with hands-on action have been shown to be most effective in promoting long-term behavior change and continued engagement.</p>
+                </div>
+            </section>
+            
+            <!-- Community Gardens Section -->
+            <section id="community-gardens" class="content-section">
+                <h2>Community Gardens and Urban Farming</h2>
+                <p>Community gardens and urban farming initiatives provide multiple climate benefits while enhancing food security, community cohesion, and urban biodiversity.</p>
+                
+                <img src="./assets/community-gardening.jpg" height=400 width=800 alt="Community garden with diverse participants" class="content-image">
+                
+                <p>Climate benefits of community gardens include:</p>
+                <ul>
+                    <li>Reducing food miles and associated transportation emissions</li>
+                    <li>Creating carbon sinks through plant growth and soil health</li>
+                    <li>Mitigating urban heat island effects through green spaces</li>
+                    <li>Reducing food waste through local production and distribution</li>
+                    <li>Teaching sustainable agriculture practices</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>Urban agriculture can reduce food-related carbon emissions by up to 10% in cities while providing fresh produce to communities that may have limited access to healthy foods.</p>
+                </div>
+            </section>
+            
+            <!-- Neighborhood Energy Initiatives Section -->
+            <section id="energy-initiatives" class="content-section">
+                <h2>Neighborhood Energy Initiatives</h2>
+                <p>Community-based energy initiatives empower neighborhoods to transition to renewable energy sources and improve energy efficiency.</p>
+                
+                <img src="./assets/community-solar.jpg" height=400 width=800 alt="Community solar project installation" class="content-image">
+                
+                <p>Examples of neighborhood energy initiatives include:</p>
+                <ul>
+                    <li>Community solar projects</li>
+                    <li>Neighborhood energy efficiency campaigns</li>
+                    <li>Community-owned renewable energy cooperatives</li>
+                    <li>Bulk purchasing programs for solar panels or energy-efficient appliances</li>
+                    <li>Energy audits and weatherization assistance programs</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>Community-owned renewable energy projects have grown significantly in recent years, with over 4,500 community energy initiatives across Europe alone, generating both clean energy and local economic benefits.</p>
+                </div>
+            </section>
+            
+            <!-- Education and Outreach Section -->
+            <section id="education-outreach" class="content-section">
+                <h2>Education and Outreach Programs</h2>
+                <p>Education and outreach programs are essential for building climate literacy, inspiring action, and fostering a culture of sustainability within communities.</p>
+                
+                <img src="./assets/community-workshop.png" height=400 width=800 alt="Climate education workshop with community members" class="content-image">
+                
+                <p>Effective climate education and outreach approaches include:</p>
+                <ul>
+                    <li>School-based climate education programs</li>
+                    <li>Intergenerational learning initiatives</li>
+                    <li>Citizen science projects that monitor local environmental changes</li>
+                    <li>Climate storytelling and arts-based engagement</li>
+                    <li>Peer-to-peer learning networks</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>Studies show that community-based education programs that connect climate change to local impacts and solutions are more effective at motivating action than approaches that focus solely on global problems.</p>
+                </div>
+            </section>
+        </div>
+        <!-- Go to Top Button -->
+        <a href="#" class="go-to-top" aria-label="Go to top of page">↑</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .feedback-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+            font-family: var(--font-sans);
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .rating-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-item {
+            text-align: center;
+        }
+        
+        .rating-label {
+            display: block;
+            cursor: pointer;
+        }
+        
+        .rating-input {
+            display: none;
+        }
+        
+        .rating-icon {
+            font-size: 2rem;
+            color: var(--muted-foreground);
+            transition: color 0.2s ease;
+        }
+        
+        .rating-input:checked + .rating-icon {
+            color: var(--primary);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .checkbox-input {
+            margin-right: 0.5rem;
+        }
+        
+        .submit-button {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--primary);
+            filter: brightness(0.9);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link active">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="feedback-header">
+            <div class="container">
+                <h1>Feedback Form</h1>
+                <p>Help us improve our climate action initiatives by sharing your thoughts</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <form class="feedback-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">How would you rate your experience with our climate action initiatives?</label>
+                    <div class="rating-group">
+                        <div class="rating-item">
+                            <label class="rating-label">
+                                <input type="radio" name="rating" value="1" class="rating-input">
+                                <span class="rating-icon">😞</span>
+                                <span>Poor</span>
+                            </label>
+                        </div>
+                        <div class="rating-item">
+                            <label class="rating-label">
+                                <input type="radio" name="rating" value="2" class="rating-input">
+                                <span class="rating-icon">😐</span>
+                                <span>Fair</span>
+                            </label>
+                        </div>
+                        <div class="rating-item">
+                            <label class="rating-label">
+                                <input type="radio" name="rating" value="3" class="rating-input">
+                                <span class="rating-icon">🙂</span>
+                                <span>Good</span>
+                            </label>
+                        </div>
+                        <div class="rating-item">
+                            <label class="rating-label">
+                                <input type="radio" name="rating" value="4" class="rating-input">
+                                <span class="rating-icon">😊</span>
+                                <span>Very Good</span>
+                            </label>
+                        </div>
+                        <div class="rating-item">
+                            <label class="rating-label">
+                                <input type="radio" name="rating" value="5" class="rating-input">
+                                <span class="rating-icon">😍</span>
+                                <span>Excellent</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedback" class="form-label">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" class="form-textarea" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Which areas of our climate action work are you most interested in?</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="reforestation" name="interests" value="reforestation" class="checkbox-input">
+                        <label for="reforestation">Reforestation</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="renewable-energy" name="interests" value="renewable-energy" class="checkbox-input">
+                        <label for="renewable-energy">Renewable Energy</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="waste-management" name="interests" value="waste-management" class="checkbox-input">
+                        <label for="waste-management">Waste Management</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="climate-education" name="interests" value="climate-education" class="checkbox-input">
+                        <label for="climate-education">Climate Education</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="suggestions" class="form-label">Do you have any suggestions for improving our climate action initiatives?</label>
+                    <textarea id="suggestions" name="suggestions" class="form-textarea"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Feedback</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

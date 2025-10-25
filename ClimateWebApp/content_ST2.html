@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Living | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .content-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .content-nav {
+            position: sticky;
+            top: var(--header-height);
+            background-color: var(--background);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+            z-index: 10;
+        }
+        
+        .content-nav-list {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow-x: auto;
+        }
+        
+        .content-nav-link {
+            color: var(--foreground);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .content-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .content-nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .content-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: calc(var(--header-height) + 60px);
+        }
+        
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fact-box {
+            background-color: var(--muted);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .fact-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .go-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+        
+        .go-to-top:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="content-header">
+            <div class="container">
+                <h1>Sustainable Living</h1>
+                <p>Practical ways to reduce your environmental impact</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Internal navigation -->
+            <nav class="content-nav">
+                <ul class="content-nav-list">
+                    <li><a href="#introduction" class="content-nav-link">Introduction</a></li>
+                    <li><a href="#energy-efficiency" class="content-nav-link">Energy Efficiency</a></li>
+                    <li><a href="#waste-reduction" class="content-nav-link">Waste Reduction</a></li>
+                    <li><a href="#sustainable-transportation" class="content-nav-link">Sustainable Transportation</a></li>
+                    <li><a href="#eco-friendly-products" class="content-nav-link">Eco-friendly Products</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section">
+                <h2>Introduction to Sustainable Living</h2>
+                <p>Sustainable living is about reducing our environmental impact by making conscious choices in our daily lives. It involves adopting practices that minimize resource consumption, reduce waste, and promote the health of our planet and its ecosystems.</p>
+                
+                <img src="./assets/sustainable-living-cooncept.jpg" height=400 width=800 alt="Sustainable living concept illustration" class="content-image">
+                
+                <p>By embracing sustainable living, we can contribute to mitigating climate change, conserving natural resources, and creating a more equitable world for current and future generations.</p>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>According to the United Nations, sustainable consumption and production patterns could reduce global greenhouse gas emissions by 40-70% by 2050.</p>
+                </div>
+            </section>
+            
+            <!-- Energy Efficiency Section -->
+            <section id="energy-efficiency" class="content-section">
+                <h2>Energy Efficiency</h2>
+                <p>Energy efficiency is a crucial aspect of sustainable living. It involves using less energy to perform the same tasks, reducing both energy consumption and greenhouse gas emissions.</p>
+                
+                <img src="./assets/energy-efficient.webp" height=400 width=800 alt="Energy-efficient home illustration" class="content-image">
+                
+                <p>Here are some ways to improve energy efficiency in your home:</p>
+                <ul>
+                    <li>Use LED light bulbs instead of incandescent ones</li>
+                    <li>Upgrade to energy-efficient appliances</li>
+                    <li>Improve home insulation to reduce heating and cooling needs</li>
+                    <li>Use smart thermostats to optimize energy use</li>
+                    <li>Unplug electronics when not in use to avoid phantom energy consumption</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>The International Energy Agency estimates that energy efficiency improvements could account for more than 40% of the emissions reductions needed to meet global climate goals.</p>
+                </div>
+            </section>
+            
+            <!-- Waste Reduction Section -->
+            <section id="waste-reduction" class="content-section">
+                <h2>Waste Reduction</h2>
+                <p>Reducing waste is essential for sustainable living. It helps conserve natural resources, decrease pollution, and lower greenhouse gas emissions associated with waste management.</p>
+                
+                <img src="./assets/zero-waste-cycle.jpg" height=400 width=800 alt="Zero waste lifestyle illustration" class="content-image">
+                
+                <p>Here are some strategies for reducing waste:</p>
+                <ul>
+                    <li>Practice the 3 Rs: Reduce, Reuse, Recycle</li>
+                    <li>Compost organic waste</li>
+                    <li>Use reusable bags, water bottles, and food containers</li>
+                    <li>Buy products with minimal packaging</li>
+                    <li>Repair items instead of replacing them when possible</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>The World Bank estimates that global waste generation will increase by 70% by 2050 unless urgent action is taken. Waste reduction efforts are crucial to mitigate this trend.</p>
+                </div>
+            </section>
+            
+            <!-- Sustainable Transportation Section -->
+            <section id="sustainable-transportation" class="content-section">
+                <h2>Sustainable Transportation</h2>
+                <p>Transportation is a significant source of greenhouse gas emissions. Opting for sustainable transportation methods can greatly reduce your carbon footprint.</p>
+                
+                <img src="./assets/sustainable-Transportation.png" height=400 width=800 alt="Sustainable transportation options illustration" class="content-image">
+                
+                <p>Consider these sustainable transportation options:</p>
+                <ul>
+                    <li>Walking or cycling for short distances</li>
+                    <li>Using public transportation</li>
+                    <li>Carpooling or car-sharing</li>
+                    <li>Switching to an electric or hybrid vehicle</li>
+                    <li>Combining trips to reduce overall travel</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>The transportation sector accounts for approximately 14% of global greenhouse gas emissions. Sustainable transportation choices can significantly impact this figure.</p>
+                </div>
+            </section>
+            
+            <!-- Eco-friendly Products Section -->
+            <section id="eco-friendly-products" class="content-section">
+                <h2>Eco-friendly Products</h2>
+                <p>Choosing eco-friendly products is an important aspect of sustainable living. These products are designed to have minimal environmental impact throughout their lifecycle.</p>
+                
+                <img src="./assets/ecofriendly-product.webp" height=400 width=800 alt="Eco-friendly products showcase" class="content-image">
+                
+                <p>Here are some types of eco-friendly products to consider:</p>
+                <ul>
+                    <li>Biodegradable cleaning products</li>
+                    <li>Organic, locally-sourced food</li>
+                    <li>Clothing made from sustainable materials</li>
+                    <li>Rechargeable batteries</li>
+                    <li>Solar-powered devices</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>A study by Nielsen found that 73% of global consumers say they would definitely or probably change their consumption habits to reduce their environmental impact.</p>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Go to Top Button -->
+        <a href="#" class="go-to-top" aria-label="Go to top of page">↑</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .profile-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-sidebar {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .profile-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid var(--background);
+            margin: 0 auto 1.5rem;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-quote {
+            font-style: italic;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .profile-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .profile-details li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-details li::before {
+            content: "•";
+            margin-right: 0.5rem;
+        }
+
+        .skills-section {
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-bar {
+            background-color: rgba(255, 255, 255, 0.2);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--background);
+            transition: width 0.3s ease;
+        }
+
+        .profile-main {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--background);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .goals-list, .frustrations-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .goals-list li, .frustrations-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .goals-list li::before {
+            content: "🎯";
+            position: absolute;
+            left: 0;
+        }
+
+        .frustrations-list li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        .sdg-goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+        }
+
+        .sdg-goal {
+            aspect-ratio: 1;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .sdg-goal:hover {
+            transform: scale(1.1);
+        }
+
+        .sdg-goal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .calendar th, .calendar td {
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .calendar th {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .calendar td.available {
+            background-color: #e6ffe6;
+        }
+
+        .calendar td.unavailable {
+            background-color: #ffe6e6;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: var(--font-sans);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            filter: brightness(0.9);
+        }
+
+        .contact-details {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .contact-details th, .contact-details td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        .contact-details th {
+            background-color: var(--muted);
+            font-weight: 500;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link active">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="profile-container">
+            <!-- Left Sidebar -->
+            <div class="profile-sidebar">
+                <img src="./assets/profile.avif" height=200 width=200 alt="Dexter Murphy's profile photo" class="profile-avatar">
+                
+                <div class="profile-info">
+                    <h1>Dexter Murphy</h1>
+                    <p class="profile-quote">"Passionate about creating positive environmental change"</p>
+                    
+                    <ul class="profile-details">
+                        <li>Age — 21</li>
+                        <li>Work — Student</li>
+                        <li>Family — Single</li>
+                        <li>Location — London</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-section">
+                    <h2>Skills</h2>
+                    <div class="skill-item">
+                        <span class="skill-name">Communication</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Team Working</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">IT</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Presentation</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="profile-main">
+                <!-- Goals & Frustrations -->
+                <div class="card">
+                    <h2>Goals</h2>
+                    <ul class="goals-list">
+                        <li>Lead community initiatives for environmental awareness</li>
+                        <li>Develop innovative solutions for sustainable living</li>
+                        <li>Connect with like-minded individuals and organizations</li>
+                        <li>Contribute to global climate action efforts</li>
+                    </ul>
+
+                    <h2>Frustrations</h2>
+                    <ul class="frustrations-list">
+                        <li>Limited resources for environmental projects</li>
+                        <li>Slow adoption of sustainable practices</li>
+                    </ul>
+                </div>
+
+                <!-- UN Goals -->
+                <div class="card">
+                    <h2>UN Goals I Support</h2>
+                    <div class="sdg-goals">
+                        <div class="sdg-goal">
+                            <img src="./assets/no-poverty.jpg" height=80 width=80 alt="SDG 1: No Poverty" title="SDG 1: No Poverty">
+                        </div>
+                        <div class="sdg-goal">
+                            <img src="./assets/gender-equality.jpg" height=80 width=80 alt="SDG 5: Gender Equality" title="SDG 5: Gender Equality">
+                        </div>
+                        <div class="sdg-goal">
+                            <img src="./assets/zero-hunger.webp" height=80 width=80 alt="SDG 2: Zero Hunger" title="SDG 2: Zero Hunger">
+                        </div>
+                        <div class="sdg-goal">
+                            <img src="./assets/climate-actions.jpg" height=80 width=80 alt="SDG 13: Climate Action" title="SDG 13: Climate Action">
+                        </div>
+                        <div class="sdg-goal">
+                            <img src="./assets/peace.webp" height=80 width=80 alt="SDG 16: Peace, Justice and Strong Institutions" title="SDG 16: Peace, Justice and Strong Institutions">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteering Calendar -->
+                <div class="card">
+                    <h2>Volunteering Availability</h2>
+                    <table class="calendar">
+                        <thead>
+                            <tr>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                <th>Sun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="available">✓</td>
+                                <td class="unavailable">✗</td>
+                                <td class="available">✓</td>
+                                <td class="unavailable">✗</td>
+                                <td class="available">✓</td>
+                                <td class="available">✓</td>
+                                <td class="unavailable">✗</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="card">
+                    <h2>Contact Details</h2>
+                    <table class="contact-details">
+                        <tr>
+                            <th>Email</th>
+                            <td>dexter.murphy@example.com</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>+44 (123) 456-7890</td>
+                        </tr>
+                        <tr>
+                            <th>Office Address</th>
+                            <td>123 Climate Street, London, UK</td>
+                        </tr>
+                        <tr>
+                            <th>LinkedIn</th>
+                            <td>linkedin.com/in/dextermurphy</td>
+                        </tr>
+                        <tr>
+                            <th>Twitter</th>
+                            <td>@dextermurphy</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card">
+                    <h2>Contact Me</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

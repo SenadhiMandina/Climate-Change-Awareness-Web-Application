@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .team-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .team-member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 1.5rem;
+        }
+        
+        .team-member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .implemented-pages{
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0c0f0c;
+            list-style-type: disc;
+            padding-left: 20px;
+
+        }
+        .implemented-pages-heading {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 1rem;
+            font-family:Arial, Helvetica, sans-serif;
+
+        .team-member-role {
+            color: black;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .team-member-bio {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+        
+        .team-member-social {
+            display: flex;
+            gap: 1rem;
+            
+        }
+        
+        .social-icon {
+            color: black;
+            transition: color 0.2s ease;
+        }
+        
+        .social-icon:hover {
+            color:black;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link active">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="team-header">
+            <div class="container">
+                <h1>Our Team</h1>
+                <p>Meet the passionate individuals behind our climate action initiatives</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="./assets/senadhi-mandina.jpg?height=250&width=250" alt="Student 1" class="team-member-image">
+                    <div class="team-member-info">
+                        <h2 class="team-member-name">Senadhi Mandina</h2>
+                        <p class="team-member-role">Role: Student 1</p>
+                        <h5 class="implemented-pages-heading">Implemented Pages:</h5>
+                        <ul class="implemented-pages">
+                            <li>Splash Screen</li> 
+                            <li>Volunteer</li>
+                        </ul>     
+                        <div class="team-member-social">
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="./assets/semitha-janiru.jpg?height=250&width=250" alt="Student 2" class="team-member-image">
+                    <div class="team-member-info">
+                        <h2 class="team-member-name">Semitha Janiru</h2>
+                        <p class="team-member-role">Role: Student 2</p>
+                        <h5 class="implemented-pages-heading">Implemented Pages:</h5>
+                        <ul class="implemented-pages">
+                            <li>Home Page</li> 
+                            <li>Table</li>
+                        </ul>
+                        
+                        <div class="team-member-social">
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="./assets/sahan-adithya.jpg?height=250&width=250" alt="Student 3" class="team-member-image">
+                    <div class="team-member-info">
+                        <h2 class="team-member-name">Sahan Adithya</h2>
+                        <p class="team-member-role"> Role: Student 3 </p>
+                        <h5 class="implemented-pages-heading">Implemented Pages:</h5>
+                        <ul class="implemented-pages">
+                            <li>Team</li> 
+                            <li>Feedback</li>
+                        </ul>
+                        <div class="team-member-social">
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>  
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="./assets/sasini-yoshoba.jpg?height=250&width=250" alt="Student 4" class="team-member-image">
+                    <div class="team-member-info">
+                        <h2 class="team-member-name">Sasini Yashoba</h2>
+                        <p class="team-member-role">Role: Student 4</p>
+                        <h5 class="implemented-pages-heading">Implemented Pages:</h5>
+                        <ul class="implemented-pages">
+                            <li>User Profile</li> 
+                            <li>Sitemap</li>
+                        </ul>
+                        <div class="team-member-social">
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; Copyright <b>United Nations</b>. All rights Reserved.<br>
+                
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

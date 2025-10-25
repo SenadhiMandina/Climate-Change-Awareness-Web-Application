@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy & Advocacy | Climate Action</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .content-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .content-nav {
+            position: sticky;
+            top: var(--header-height);
+            background-color: var(--background);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+            z-index: 10;
+        }
+        
+        .content-nav-list {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow-x: auto;
+        }
+        
+        .content-nav-link {
+            color: var(--foreground);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .content-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .content-nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .content-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: calc(var(--header-height) + 60px);
+        }
+        
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fact-box {
+            background-color: var(--muted);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .fact-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .go-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .go-to-top:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="content-header">
+            <div class="container">
+                <h1>Policy & Advocacy</h1>
+                <p>Driving change through legislation and public engagement</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Internal navigation -->
+            <nav class="content-nav">
+                <ul class="content-nav-list">
+                    <li><a href="#introduction" class="content-nav-link">Introduction</a></li>
+                    <li><a href="#international-agreements" class="content-nav-link">International Agreements</a></li>
+                    <li><a href="#national-policies" class="content-nav-link">National Policies</a></li>
+                    <li><a href="#local-initiatives" class="content-nav-link">Local Initiatives</a></li>
+                    <li><a href="#advocacy-strategies" class="content-nav-link">Advocacy Strategies</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section">
+                <h2>Introduction to Climate Policy and Advocacy</h2>
+                <p>Climate policy and advocacy play crucial roles in addressing the global challenge of climate change. They involve creating and implementing laws, regulations, and initiatives at various levels of government, as well as mobilizing public support for climate action.</p>
+                
+                <img src="./assets/climate-artwork.jpg" height=400 width=800 alt="Climate policy and advocacy illustration" class="content-image">
+                
+                <p>Effective climate policies and advocacy efforts are essential for reducing greenhouse gas emissions, promoting renewable energy, and building resilience to climate impacts.</p>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>According to the Intergovernmental Panel on Climate Change (IPCC), policy interventions are critical to limiting global warming to 1.5°C above pre-industrial levels.</p>
+                </div>
+            </section>
+            
+            <!-- International Agreements Section -->
+            <section id="international-agreements" class="content-section">
+                <h2>International Agreements</h2>
+                <p>International agreements form the backbone of global climate action, providing frameworks for countries to work together in addressing climate change.</p>
+                
+                <img src="./assets/climate-agreement.jpeg" height=400 width=800 alt="International climate agreement signing ceremony" class="content-image">
+                
+                <p>Key international climate agreements include:</p>
+                <ul>
+                    <li>The United Nations Framework Convention on Climate Change (UNFCCC)</li>
+                    <li>The Kyoto Protocol</li>
+                    <li>The Paris Agreement</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>The Paris Agreement, adopted in 2015, aims to keep global temperature rise this century well below 2°C above pre-industrial levels and to pursue efforts to limit the increase to 1.5°C.</p>
+                </div>
+            </section>
+            
+            <!-- National Policies Section -->
+            <section id="national-policies" class="content-section">
+                <h2>National Climate Policies</h2>
+                <p>National governments play a crucial role in implementing climate policies that align with international agreements and address country-specific challenges and opportunities.</p>
+                
+                <img src="./assets/climate-policy-impl.webp" height=400 width=800 alt="National climate policy implementation illustration" class="content-image">
+                
+                <p>Examples of national climate policies include:</p>
+                <ul>
+                    <li>Carbon pricing mechanisms (e.g., carbon taxes, cap-and-trade systems)</li>
+                    <li>Renewable energy targets and incentives</li>
+                    <li>Energy efficiency standards for buildings and appliances</li>
+                    <li>Sustainable transportation policies</li>
+                    <li>Reforestation and land-use management programs</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>As of 2021, over 70 countries have set net-zero emissions targets, covering about 76% of global emissions.</p>
+                </div>
+            </section>
+            
+            <!-- Local Initiatives Section -->
+            <section id="local-initiatives" class="content-section">
+                <h2>Local Climate Initiatives</h2>
+                <p>Local governments and communities often lead the way in implementing innovative climate solutions tailored to their specific contexts.</p>
+                
+                <img src="./assets/local-climate.jpg" height=400 width=800 alt="Local climate initiative in action" class="content-image">
+                
+                <p>Examples of local climate initiatives include:</p>
+                <ul>
+                    <li>City-wide renewable energy programs</li>
+                    <li>Green building codes and incentives</li>
+                    <li>Sustainable urban planning and design</li>
+                    <li>Community-based adaptation projects</li>
+                    <li>Local food systems and urban agriculture</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>The Global Covenant of Mayors for Climate & Energy, the largest global alliance for city climate leadership, represents more than 10,000 cities and local governments worldwide.</p>
+                </div>
+            </section>
+            
+            <!-- Advocacy Strategies Section -->
+            <section id="advocacy-strategies" class="content-section">
+                <h2>Climate Advocacy Strategies</h2>
+                <p>Climate advocacy involves raising awareness, mobilizing public support, and influencing decision-makers to take action on climate change.</p>
+                
+                <img src="./assets/climate-campaign.avif" height=400 width=800 alt="Climate advocacy campaign illustration" class="content-image">
+                
+                <p>Effective climate advocacy strategies include:</p>
+                <ul>
+                    <li>Public education and awareness campaigns</li>
+                    <li>Grassroots organizing and community engagement</li>
+                    <li>Lobbying policymakers and elected officials</li>
+                    <li>Media outreach and strategic communications</li>
+                    <li>Legal action and climate litigation</li>
+                    <li>Youth-led climate movements</li>
+                </ul>
+                
+                <div class="fact-box">
+                    <h3>Key Fact</h3>
+                    <p>The global climate strikes in 2019, inspired by Greta Thunberg's Fridays for Future movement, mobilized an estimated 6 million people worldwide, demonstrating the power of grassroots climate advocacy.</p>
+                </div>
+            </section>
+        </div>
+        <!-- Go to Top Button -->
+        <a href="#" class="go-to-top" aria-label="Go to top of page">↑</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

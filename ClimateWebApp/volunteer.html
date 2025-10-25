@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Action - Volunteer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific styles */
+        .volunteer-header {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .programs-section {
+            margin-bottom: 3rem;
+        }
+        
+        .programs-container {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .program-card {
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1.5rem;
+        }
+        
+        .program-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        .program-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .program-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+        
+        .program-button-primary {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+        
+        .program-button-primary:hover {
+            filter: brightness(0.9);
+        }
+        
+        .program-button-secondary {
+            background-color: var(--muted);
+            color: var(--foreground);
+        }
+        
+        .program-button-secondary:hover {
+            background-color: var(--border);
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .dropdown-select {
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+            background-color: var(--background);
+            appearance: none;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .dropdown::after {
+            content: '▼';
+            font-size: 0.8rem;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .ratings-section {
+            background-color: var(--muted);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .rating-text {
+            font-size: 1.25rem;
+            color: var(--foreground);
+        }
+        
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .review-card {
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review-rating {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .review-text {
+            margin-bottom: 1rem;
+        }
+        
+        .review-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+        }
+        
+        .feedback-form {
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .emoji-rating {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+        
+        .emoji-button {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .emoji-button:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Climate Action Logo">
+                <span class="logo-text">Climate Action</span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="volunteer.html" class="nav-link active">Volunteer</a>
+                </div>
+                <div class="nav-item">
+                    <a href="table.html" class="nav-link">Data</a>
+                </div>
+                <div class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                </div>
+                <div class="nav-item">
+                    <a href="sitemap.html" class="nav-link">Sitemap</a>
+                </div>
+                <div class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="volunteer-header">
+            <div class="container">
+                <h1>Volunteer Opportunities</h1>
+                <p>Join our community and make a difference in the fight against climate change</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Programs Section -->
+            <section class="programs-section">
+                <h2>Available Programs</h2>
+                
+                <div class="dropdown">
+                    <select class="dropdown-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="recent">Recently Added</option>
+                        <option value="location">Nearest Location</option>
+                        <option value="impact">Highest Impact</option>
+                    </select>
+                </div>
+                
+                <div class="programs-container">
+                    <!-- Program 1 -->
+                    <div class="program-card">
+                        <div class="program-icon">🌱</div>
+                        <div class="program-content">
+                            <h3>Urban Reforestation Initiative</h3>
+                            <p>Help plant trees in urban areas to combat the heat island effect, improve air quality, and create green spaces for communities.</p>
+                            <div class="program-actions">
+                                <button class="program-button program-button-primary">Sign Up</button>
+                                <button class="program-button program-button-secondary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="program-card">
+                        <div class="program-icon">🌊</div>
+                        <div class="program-content">
+                            <h3>Coastal Cleanup Campaign</h3>
+                            <p>Join our regular beach and coastal cleanup efforts to remove plastic waste and protect marine ecosystems from pollution.</p>
+                            <div class="program-actions">
+                                <button class="program-button program-button-primary">Sign Up</button>
+                                <button class="program-button program-button-secondary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="program-card">
+                        <div class="program-icon">📚</div>
+                        <div class="program-content">
+                            <h3>Climate Education Outreach</h3>
+                            <p>Volunteer as a climate educator in schools and community centers to raise awareness about climate change and sustainable practices.</p>
+                            <div class="program-actions">
+                                <button class="program-button program-button-primary">Sign Up</button>
+                                <button class="program-button program-button-secondary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 4 -->
+                    <div class="program-card">
+                        <div class="program-icon">🔬</div>
+                        <div class="program-content">
+                            <h3>Citizen Science Projects</h3>
+                            <p>Participate in data collection and monitoring projects that help scientists track climate change impacts on local ecosystems.</p>
+                            <div class="program-actions">
+                                <button class="program-button program-button-primary">Sign Up</button>
+                                <button class="program-button program-button-secondary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ratings Section -->
+            <section class="ratings-section">
+                <h2 class="text-center mb-4">Volunteer Ratings & Reviews</h2>
+                
+                <div class="rating-summary">
+                    <div class="rating-number">9.4/10</div>
+                    <div class="rating-text">Exceptional</div>
+                    <p>Based on 128 volunteer reviews</p>
+                </div>
+                
+                <div class="reviews-container">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★ Excellent</div>
+                        <div class="review-text">
+                            <p>The Urban Reforestation program was incredibly well organized. I learned so much about native tree species and felt like I made a real difference.</p>
+                            <a href="#">See More</a>
+                        </div>
+                        <div class="review-meta">
+                            <span>Sarah J.</span>
+                            <span>March 15, 2025</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="review-rating">★★★★☆ Very Good</div>
+                        <div class="review-text">
+                            <p>I participated in the Coastal Cleanup and was amazed by how much plastic we collected in just one day. Great experience overall.</p>
+                            <a href="#">See More</a>
+                        </div>
+                        <div class="review-meta">
+                            <span>Michael T.</span>
+                            <span>February 28, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Feedback Form -->
+            <section>
+                <h2 class="text-center mb-4">Share Your Experience</h2>
+                
+                <div class="feedback-form">
+                    <div class="emoji-rating">
+                        <button class="emoji-button">😞</button>
+                        <button class="emoji-button">😐</button>
+                        <button class="emoji-button">🙂</button>
+                        <button class="emoji-button">😊</button>
+                        <button class="emoji-button">😍</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-textarea" placeholder="Write your review here..."></textarea>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button class="btn btn-primary">Submit Feedback</button>
+                        <button class="btn" style="background-color: #e2e8f0;">Cancel</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 Climate Action Team</p>
+            </div>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+                <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+                <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+                <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

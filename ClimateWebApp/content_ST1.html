@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Science | Climate Action</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+      /* Page-specific styles */
+      .content-header {
+          background-color: var(--primary);
+          color: var(--primary-foreground);
+          padding: 3rem 0;
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+      
+      .content-nav {
+          position: sticky;
+          top: var(--header-height);
+          background-color: var(--background);
+          padding: 1rem 0;
+          border-bottom: 1px solid var(--border);
+          margin-bottom: 2rem;
+          z-index: 10;
+      }
+      
+      .content-nav-list {
+          display: flex;
+          gap: 1.5rem;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          overflow-x: auto;
+      }
+      
+      .content-nav-link {
+          color: var(--foreground);
+          text-decoration: none;
+          white-space: nowrap;
+          padding: 0.5rem 0;
+          position: relative;
+      }
+      
+      .content-nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: var(--primary);
+          transition: width 0.3s ease;
+      }
+      
+      .content-nav-link:hover::after {
+          width: 100%;
+      }
+      
+      .content-section {
+          margin-bottom: 4rem;
+          scroll-margin-top: calc(var(--header-height) + 60px);
+      }
+      
+      .content-section h2 {
+          margin-bottom: 1.5rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 2px solid var(--primary);
+      }
+      
+      .content-image {
+          width: 100%;
+          height: auto;
+          border-radius: 0.5rem;
+          margin: 1.5rem 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .fact-box {
+          background-color: var(--muted);
+          border-left: 4px solid var(--primary);
+          padding: 1.5rem;
+          margin: 1.5rem 0;
+          border-radius: 0 0.5rem 0.5rem 0;
+      }
+      
+      .fact-box h3 {
+          margin-top: 0;
+          color: var(--primary);
+      }
+      
+      .go-to-top {
+          position: fixed;
+          bottom: 2rem;
+          right: 2rem;
+          background-color: var(--primary);
+          color: var(--primary-foreground);
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+          font-size: 1.5rem;
+      }
+      
+      .go-to-top:hover {
+          background-color: var(--accent);
+          transform: translateY(-3px);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+  </style>
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header class="header">
+      <div class="container header-content">
+          <div class="logo">
+              <img src="./assets/logo.png" alt="Climate Action Logo">
+              <span class="logo-text">Climate Action</span>
+          </div>
+          <nav class="nav">
+              <div class="nav-item">
+                  <a href="home.html" class="nav-link">Home</a>
+              </div>
+              <div class="nav-item">
+                  <a href="volunteer.html" class="nav-link">Volunteer</a>
+              </div>
+              <div class="nav-item">
+                  <a href="table.html" class="nav-link">Data</a>
+              </div>
+              <div class="nav-item">
+                  <a href="profile.html" class="nav-link">Profile</a>
+              </div>
+              <div class="nav-item">
+                  <a href="feedback.html" class="nav-link">Feedback</a>
+              </div>
+              <div class="nav-item">
+                  <a href="sitemap.html" class="nav-link">Sitemap</a>
+              </div>
+              <div class="nav-item">
+                  <a href="team.html" class="nav-link">Team</a>
+              </div>
+          </nav>
+      </div>
+  </header>
+
+  <!-- Main content area -->
+  <main class="main">
+      <div class="content-header">
+          <div class="container">
+              <h1>Climate Science</h1>
+              <p>Understanding the science behind climate change</p>
+          </div>
+      </div>
+      
+      <div class="container">
+          <!-- Internal navigation -->
+          <nav class="content-nav">
+              <ul class="content-nav-list">
+                  <li><a href="#introduction" class="content-nav-link">Introduction</a></li>
+                  <li><a href="#greenhouse-effect" class="content-nav-link">Greenhouse Effect</a></li>
+                  <li><a href="#global-warming" class="content-nav-link">Global Warming</a></li>
+                  <li><a href="#climate-models" class="content-nav-link">Climate Models</a></li>
+                  <li><a href="#impacts" class="content-nav-link">Climate Impacts</a></li>
+                  <li><a href="#solutions" class="content-nav-link">Scientific Solutions</a></li>
+              </ul>
+          </nav>
+          
+          <!-- Introduction Section -->
+          <section id="introduction" class="content-section">
+              <h2>Introduction to Climate Science</h2>
+              <p>Climate science is the study of the Earth's climate system and how it changes over time. It encompasses a wide range of disciplines, including atmospheric physics, oceanography, geology, and ecology. Climate scientists collect and analyze data from various sources to understand past climate patterns, current climate conditions, and to predict future climate scenarios.</p>
+              
+              <img src="./assets/climate-scientist.png" height=400 width=800 alt="Climate scientists collecting data in the field" class="content-image">
+              
+              <p>The Earth's climate has naturally fluctuated throughout its history due to factors such as changes in the Earth's orbit, volcanic activity, and variations in solar output. However, the current rate of climate change is unprecedented in recent geological history and is primarily driven by human activities, particularly the emission of greenhouse gases from burning fossil fuels.</p>
+              
+              <div class="fact-box">
+                  <h3>Key Fact</h3>
+                  <p>The Intergovernmental Panel on Climate Change (IPCC), established in 1988, is the United Nations body responsible for assessing the science related to climate change. It provides policymakers with regular scientific assessments on climate change, its implications, and potential future risks.</p>
+              </div>
+          </section>
+          
+          <!-- Greenhouse Effect Section -->
+          <section id="greenhouse-effect" class="content-section">
+              <h2>The Greenhouse Effect</h2>
+              <p>The greenhouse effect is a natural process that warms the Earth's surface. When the Sun's energy reaches the Earth's atmosphere, some of it is reflected back to space and the rest is absorbed and re-radiated by greenhouse gases. These gases include water vapor, carbon dioxide, methane, nitrous oxide, and ozone.</p>
+              
+              <img src="./assets/green-house-effect.png" height=400 width=800 alt="Diagram showing the greenhouse effect process" class="content-image">
+              
+              <p>Greenhouse gases act like a blanket, trapping heat in the Earth's atmosphere and warming the planet. This natural greenhouse effect is essential for life on Earth, as without it, the planet would be too cold to support life as we know it. However, human activities have significantly increased the concentration of greenhouse gases in the atmosphere, enhancing the greenhouse effect and leading to global warming.</p>
+              
+              <div class="fact-box">
+                  <h3>Key Fact</h3>
+                  <p>Carbon dioxide (CO₂) levels in the atmosphere have increased by more than 45% since the Industrial Revolution began in the late 18th century, primarily due to the burning of fossil fuels and deforestation.</p>
+              </div>
+          </section>
+          
+          <!-- Global Warming Section -->
+          <section id="global-warming" class="content-section">
+              <h2>Global Warming</h2>
+              <p>Global warming refers to the long-term heating of Earth's climate system observed since the pre-industrial period (between 1850 and 1900) due to human activities, primarily fossil fuel burning, which increases heat-trapping greenhouse gas levels in Earth's atmosphere.</p>
+              
+              <img src="./assets/climate-graph.webp" height=400 width=800 alt="Graph showing global temperature rise over time" class="content-image">
+              
+              <p>The term "global warming" is often used interchangeably with the term "climate change," though the latter refers to both human- and naturally-produced warming and the effects it has on our planet. Scientists have observed that the average global temperature has increased by about 1.1°C since the pre-industrial era.</p>
+              
+              <p>This warming has led to a range of impacts, including more frequent and intense heat waves, changes in precipitation patterns, sea level rise, and more extreme weather events such as hurricanes, floods, and droughts.</p>
+              
+              <div class="fact-box">
+                  <h3>Key Fact</h3>
+                  <p>The Paris Agreement, adopted in 2015, aims to limit global warming to well below 2°C, preferably to 1.5°C, compared to pre-industrial levels. To achieve this goal, global greenhouse gas emissions need to be reduced significantly in the coming decades.</p>
+              </div>
+          </section>
+          
+          <!-- Climate Models Section -->
+          <section id="climate-models" class="content-section">
+              <h2>Climate Models</h2>
+              <p>Climate models are mathematical representations of the Earth's climate system. They are based on the physical, chemical, and biological properties of the Earth's components (atmosphere, hydrosphere, cryosphere, land surface, and biosphere) and their interactions.</p>
+              
+              <img src="./assets/climate-model.png" height=400 width=800 alt="Visualization of a climate model simulation" class="content-image">
+              
+              <p>Scientists use climate models to understand how the climate has changed in the past and to project how it might change in the future under different scenarios of greenhouse gas emissions. These models are continuously improved as our understanding of the climate system advances and as computing power increases.</p>
+              
+              <p>Climate models have successfully reproduced observed features of current climate and past climate changes. They provide valuable insights into the potential impacts of climate change and help inform policy decisions aimed at mitigating these impacts.</p>
+              
+              <div class="fact-box">
+                  <h3>Key Fact</h3>
+                  <p>The IPCC's Sixth Assessment Report, released in 2021, used the latest generation of climate models to project that global surface temperature will continue to increase until at least the mid-century under all emissions scenarios considered.</p>
+              </div>
+          </section>
+          
+          <!-- Climate Impacts Section -->
+          <section id="impacts" class="content-section">
+              <h2>Climate Impacts</h2>
+              <p>Climate change is already affecting every region on Earth, with impacts varying by location and intensity. Some of the most significant impacts include:</p>
+              
+              <ul>
+                  <li><strong>Rising Sea Levels:</strong> Thermal expansion of seawater and melting ice from glaciers and ice sheets are causing sea levels to rise, threatening coastal communities and ecosystems.</li>
+                  <li><strong>Extreme Weather Events:</strong> Climate change is increasing the frequency and intensity of extreme weather events such as heat waves, droughts, floods, and tropical cyclones.</li>
+                  <li><strong>Biodiversity Loss:</strong> Many plant and animal species are struggling to adapt to rapid climate change, leading to shifts in their geographic ranges, changes in seasonal activities, and in some cases, extinction.</li>
+                  <li><strong>Ocean Acidification:</strong> The ocean absorbs about 30% of the CO₂ released into the atmosphere, leading to increased acidity that threatens marine ecosystems, particularly coral reefs and shellfish.</li>
+              </ul>
+              
+              <img src="./assets/climate-change.jpg" height=400 width=800 alt="Collage showing various climate change impacts" class="content-image">
+              
+              <p>These impacts have significant implications for human societies, affecting food security, water availability, public health, and economic development. The most vulnerable populations, often those with the least resources to adapt, are likely to be the most severely affected.</p>
+              
+              <div class="fact-box">
+                  <h3>Key Fact</h3>
+                  <p>According to the World Health Organization, climate change is expected to cause approximately 250,000 additional deaths per year between 2030 and 2050, from malnutrition, malaria, diarrhea, and heat stress.</p>
+              </div>
+          </section>
+          
+          <!-- Scientific Solutions Section -->
+          <section id="solutions" class="content-section">
+              <h2>Scientific Solutions</h2>
+              <p>Addressing climate change requires a combination of mitigation (reducing greenhouse gas emissions) and adaptation (adjusting to current or expected climate change impacts). Science plays a crucial role in developing and implementing effective solutions:</p>
+              
+              <ul>
+                  <li><strong>Renewable Energy:</strong> Transitioning from fossil fuels to renewable energy sources such as solar, wind, and hydropower can significantly reduce greenhouse gas emissions.</li>
+                  <li><strong>Energy Efficiency:</strong> Improving energy efficiency in buildings, transportation, and industry can reduce energy consumption and associated emissions.</li>
+                  <li><strong>Carbon Capture and Storage:</strong> Technologies that capture CO₂ from point sources or directly from the atmosphere and store it underground can help reduce atmospheric CO₂ levels.</li>
+                  <li><strong>Nature-Based Solutions:</strong> Protecting and restoring forests, wetlands, and other ecosystems can enhance carbon sequestration and provide additional benefits such as biodiversity conservation and flood protection.</li>
+              </ul>
+              
+              <img src="./assets/renewable-energy.jpg" height=400 width=800 alt="Renewable energy technologies" class="content-image">
+              
+              <p>Scientific research continues to advance our understanding of climate change and to develop innovative solutions. However, implementing these solutions requires political will, economic investment, and societal change. The transition to a low-carbon, climate-resilient future presents both challenges and opportunities for sustainable development.</p>
+              
+              <div class="fact-box">
+                  <h3>Key Fact</h3>
+                  <p>The International Renewable Energy Agency (IRENA) reports that renewable energy could supply 86% of global power demand by 2050, significantly reducing energy-related CO₂ emissions and helping to limit global warming.</p>
+              </div>
+          </section>
+      </div>
+      
+      <!-- Go to Top Button -->
+      <a href="#" class="go-to-top" aria-label="Go to top of page">↑</a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container footer-content">
+          <div>
+              <p>&copy; 2025 Climate Action Team</p>
+          </div>
+          <div class="footer-links">
+              <a href="pageEditor_ST1.html" class="footer-link">Student 1 Editor</a>
+              <a href="pageEditor_ST2.html" class="footer-link">Student 2 Editor</a>
+              <a href="pageEditor_ST3.html" class="footer-link">Student 3 Editor</a>
+              <a href="pageEditor_ST4.html" class="footer-link">Student 4 Editor</a>
+          </div>
+      </div>
+  </footer>
+</body>
+</html>
+
