@@ -16,7 +16,8 @@ A group project web application designed to raise awareness about climate change
   - Feedback  
   - Sitemap  
   - Team  
-- Interactive charts, images, and content  
+- Interactive charts, images, and content
+- Well-organized assets (images, CSS, JS) for maintainability  
 
 ## Folder Structure
 
